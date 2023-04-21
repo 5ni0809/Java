@@ -1,0 +1,16 @@
+//app7_1 簡單範例
+public class app7_1
+{
+       public static void main(String args[])
+       {
+              star();
+              System.out.println("knowledge is power");
+              star();
+       }
+       public static void star()
+       {
+              for(int i=0;i<20;i++)
+                   System.out.print("*");
+              System.out.print("\n");
+       }
+}
