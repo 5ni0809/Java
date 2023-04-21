@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class app3_2
+{
+       public static void main(String args[])throws Exception
+       {
+            double a,b,c,T;
+            Scanner scanner = new Scanner(System.in);
+            a = scanner.nextInt();
+            b = scanner.nextInt();
+            c = a+(b/60);
+            T=(4*c*c/(c+2))-20;
+            System.out.print(T);
+       }
+}
