@@ -1,0 +1,30 @@
+//app5_h2  
+import java.util.Scanner;
+
+public class app5_h2 
+{
+ public static void main(String args[])
+ {
+  int a,b,c,n,f,t=0;
+  Scanner sc = new Scanner(System.in);
+  n=sc.nextInt();
+
+  for(a=1;a<n;a++){
+  for(b=a+1;b<n;b++){
+  for(c=b+1;c<n;c++)
+  {
+   f=0;
+   if((a*a+b*b)==(c*c)){
+   for(int i=2;i<a;i++)
+   {
+    if(a%i==0&&b%i==0||
+       b%i==0&&c%i==0||
+       c%i==0&&a%i==0)
+    {f=1;break;}
+   }
+   if(f==0){t++;System.out.println("a="+a+",b="+b+",c="+c+"   "+t);}
+   }
+  }}}
+  
+ }
+}
