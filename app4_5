@@ -1,0 +1,18 @@
+//app4_5  輸入成績
+import java.util.Scanner;
+public class app4_5
+{
+    public static void main(String args[])throws Exception
+    {
+           Scanner scanner = new Scanner(System.in); 
+          int a = scanner.nextInt();;
+          if ((a<  0) || (a>100))
+                 System.out.println("Input error!!");//成績輸入錯誤
+          if ((a< 101) && (a> 59))
+                 System.out.println("Pass!!");//及格       
+          if ((a< 60) && (a> 49))
+                 System.out.println("Make up exam!!");//需要補考   
+          if ((a< 50) && (a> 0))
+                 System.out.println("Again!!");//重修   
+    }
+}
