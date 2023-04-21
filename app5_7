@@ -1,0 +1,14 @@
+//app5_7  巢狀 for 迴圈來求9*9乘法表
+public class app5_7
+{
+    public static void main(String args[])
+    {
+          int i, j;
+          for (i=1;i<=9;i+=2)
+          {
+              for(j=2;j<=9;j+=2)
+                 System.out.print(i+"*"+j+"="+(i*j)+"\t");   
+              System.out.println();    
+          } 
+    }
+}
