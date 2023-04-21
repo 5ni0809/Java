@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class mag
+{
+	public static void main(String[] args) 
+	{
+		int a[][],n,t=1,line=1,tab=2;
+		Scanner sc = new Scanner(System.in);
+		n=sc.nextInt();
+		a=new int[n+1][n+1]; 
+
+		while((n*n)>=t)
+		{
+			line-=1;tab-=1;
+
+			while(line>n||line<0){
+			if(line<0){line+=n;}
+			else if(line>n){line-=n;}}
+			while(tab>n||tab<0){
+			if(tab<0){tab+=n;}
+			else if(tab>n){tab-=n;}}
+
+			//System.out.println(line+" "+tab+" "+t+"/"+a[line][tab]);
+			if(a[line][tab]==0&&line<n&&tab<n)
+			{a[line][tab]=t;	t++;}
+			else {line+=3;	tab+=2;}
+
+			while(line>n||line<0){
+			if(line<0){line+=n;}
+			else if(line>n){line-=n;}}
+			while(tab>n||tab<0){
+			if(tab<0){tab+=n;}
+			else if(tab>n){tab-=n;}}
+		}
+
+		for(line=0;line<n;line++)
+		{
+			for(tab=0;tab<n;tab++)
+			{System.out.print(a[line][tab]+" ");}
+			System.out.println();
+		}
+		
+	}
+}
