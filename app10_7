@@ -1,0 +1,42 @@
+//app10_7,透過父類別變數cir呼叫show()函數
+class CCircle
+{
+	protected static double pi=3.14;
+	protected double radius;
+	
+	public CCircle(double r)
+	{
+		radius=r;
+	}
+	public void show()
+	{
+		System.out.println("radius="+radius);
+	}
+}
+
+class CCoin extends CCircle
+{
+	private int value;
+	
+	public CCoin(double r,int v)
+	{
+		super(r);
+		value = v;
+	}
+	public void show()
+	{
+		System.out.println("radius="+radius+", value="+value);
+	}
+	public void showValue()
+	{
+		System.out.println("value="+value);
+	}
+}
+public class app10_7
+{
+	public static void main(String args[])
+	{
+		CCircle cir=new CCoin(2.0,5);
+		cir.show();
+	}
+}
