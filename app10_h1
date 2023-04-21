@@ -1,0 +1,77 @@
+//app10_h1
+class Rational 
+{ 
+	int num, denom;
+	
+	Rational( int n, int d )
+	{ 
+		num = n;
+		denom = d;
+	}
+	boolean equals(Rational b)
+	{
+    		return ((this.num==b.num)&&(this.denom==b.denom));
+ 	}
+	public String toString() 
+	{ 
+		return String.format( "%d + %d i", num, denom);
+	}
+	Rational Max(Rational b)
+	{
+		float x=num/denom;
+		float y=b.num/b.denom;
+		if(x>y) return this;
+		else	return b;
+	} 
+	Rational Min(Rational b) 	
+	{
+		float x=num/denom;
+		float y=b.num/b.denom;
+		if(x<y) return this;
+		else	return b;
+	}
+	boolean isEquals(Rational b) 
+	{
+		float x=num/denom;
+		float y=b.num/b.denom;
+		if(x==y) return true;  
+		else	return false;
+	} 
+	Rational  add(Rational  b )
+	{ 
+		return new Rational(num*b.denom + denom*b.num, denom*b.denom);
+	} 
+	Rational  minus(Rational  b )
+	{ 
+		return new Rational(num*b.denom - denom*b.num, denom*b.denom);
+	} 
+	Rational  multiply(Rational  b )
+	{ 
+		return new Rational(num*b.num, denom*b.denom);
+	} 
+	Rational  divide(Rational  b)
+	{ 
+		return new Rational(num*b.denom, denom*b.num);
+	}
+	  
+} 
+
+public class app10_h1	
+{ 
+	public static void main( String args[] ) 
+	{ 
+		Rational  a = new Rational( 4, 2 );  //  4/2 
+		Rational  b = new Rational( 4, 2 );  //  4/2 
+		
+		System.out.println( "a = "+a.toString() ); 
+		System.out.println( "b = "+b.toString() ); 
+  
+		if(a.equals(b)) {
+   			System.out.println("a equals b");
+		}
+		if(a==b) {
+  			System.out.println("a == b");
+		}
+		System.out.println("a = " + a);	
+	}	  
+}
