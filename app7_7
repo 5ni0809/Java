@@ -1,0 +1,29 @@
+//app7_7 設計傳回二維陣列的函數
+public class app7_7
+{
+       public static void main(String args[])
+       {
+              int A[][]={{18,32,65,27,30},{17,56,12,66}};
+              int B[][]=add10(A);
+              print_mat(A);
+              print_mat(B);
+              
+       }
+       public static int[][] add10(int arr[][])
+       { 
+              int a [][] ={{0,0,0,0,0},{0,0,0,0}};
+              for(int i=0;i<arr.length;i++)
+                     for(int j=0;j<arr[i].length;j++)
+                            a[i][j] = arr[i][j]+10;
+              return a;
+       }
+       public static void print_mat(int arr[][])
+       {
+              for(int i=0;i<arr.length;i++)
+              {
+                     for(int j=0;j<arr[i].length;j++)
+                            System.out.print(arr[i][j]+" ");
+                     System.out.print("\n");
+              }
+       }
+}
