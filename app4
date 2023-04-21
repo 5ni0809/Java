@@ -1,0 +1,43 @@
+//app4  收費方式
+import java.util.Scanner;
+public class app4
+{
+       public static void main(String[] args)throws Exception
+	{
+		int all, ad, kd, day, k;
+		float coin = 0.0f;
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("－平日中午(1)");
+		System.out.println("－例假日或者晚上(2)");
+		day = scanner.nextInt();
+		if(day != 1 && day != 2)
+		{
+			System.out.println("請重新輸入");
+			System.out.println("平日中午(1)");
+			System.out.println("例假日或者晚上(2)");
+			day = scanner.nextInt();
+		}
+		System.out.println("輸入大人數量");
+		ad = scanner.nextInt();
+		System.out.println("輸入小孩數量");
+		kd = scanner.nextInt();
+		all =ad + kd;
+		k = kd + ad % 3;
+		ad -= ad / 3;
+		kd -= k / 3;
+		if(day == 1)
+                {
+                      coin = ad*268 + kd*120;
+                }
+		else if(day == 2) 
+                { 
+                      coin = ad*368 + kd*150;
+                }
+		if(all >= 10)coin*=(float)0.95;
+		coin*=(float)1.1;
+		System.out.print("總金額為 : ");
+		System.out.println((int)coin);
+		
+		
+	}
+}
