@@ -1,0 +1,61 @@
+//app9_h1
+class Rational 
+{ 
+	int num, denom; 
+	Rational( int n, int d )
+	{ 
+		num = n;
+		denom = d;
+	} 
+	Rational  add(Rational  b )
+	{ 
+		return new Rational(num*b.denom + denom*b.num, denom*b.denom);
+	} 
+	Rational  minus(Rational  b )
+	{ 
+		return new Rational(num*b.denom - denom*b.num, denom*b.denom);
+	} 
+	Rational  multiply(Rational  b )
+	{ 
+		return new Rational(num*b.num, denom*b.denom);
+	} 
+	Rational  divide(Rational  b)
+	{ 
+		return new Rational(num*b.denom, denom*b.num);
+	}
+	public String toString() 
+	{ 
+		return String.format( "%d / %d", num, denom);
+	}  
+	Rational Max(Rational b){
+	
+	} 
+	Rational Min(Rational b) {
+	
+	} 
+	boolean isEqual(Rational b) {
+	
+	}
+} 
+import java.util.Scanner; 
+public class app9_h1	
+{ 
+	public static void main( String args[] ) 
+	{ 
+		Scanner sc = new Scanner(System.in);
+		System.out.println("輸入第一個數(a/b)");  
+        a = scanner.nextInt();
+        System.out.println("輸入第二個數(c/d))"); 
+		b = scanner.nextInt();
+
+		Rational  a = new Rational( 2, 3 );// 2/3
+		Rational  b = new Rational( 4, 6 );// 4/6 
+		
+		System.out.println( "a = "+a.toString() ); 
+		System.out.println( "b = "+b.toString() ); 
+		System.out.println( "a+b =  "+a.add( b ).toString() ); 
+		System.out.println( "a-b = "+a.minus( b ).toString() ); 
+		System.out.println( "a*b = "+a.multiply( b ).toString() ); 
+		System.out.println( "a/b =  "+a.divide( b ).toString() ); 
+	} 
+}
