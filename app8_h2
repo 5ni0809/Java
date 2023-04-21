@@ -1,0 +1,56 @@
+//app8_h2
+class Complex 
+{ 
+	double real, image; 
+
+	public Complex() 
+	{ 
+		this( 0.0, 0.0 ); 
+	} 
+	public Complex( double r, double i ) 
+	{ 
+		real = r; 
+		image = i; 
+	} 
+	public Complex add( Complex right ) 	
+	{ 
+		return new Complex( real + right.real, 
+		image + right.image); 
+	} 
+	public Complex minus( Complex right ) 
+	{ 
+		return new Complex( real - right.real, 
+		image - right.image ); 
+	} 
+	public Complex multiply( Complex right ) 
+	{ 
+		return new Complex( real * right.real - image * right.image, 
+		real * right.image + image * right.real ); 
+	} 
+	public Complex divide( Complex right) 	
+	{ 
+		double d = Math.pow(right.real, 2) + Math.pow(right.image, 2); 
+		return new Complex((real * right.real + image * right.image) / d, 
+		(image * right.real - real * right.image) / d); 
+	}
+	public String toString() 
+	{ 
+		return String.format( "%.1f + %.1fi",real, image); 
+	}  
+} 
+
+public class app8_h2 	
+{ 
+	public static void main( String args[] ) 
+	{ 
+		Complex a = new Complex( 1, 2 ); 
+		Complex b = new Complex( 3, 4 ); 
+		
+		System.out.println( "a = "+a.toString() ); // 1+2i 
+		System.out.println( "b = "+b.toString() ); // 3+4i 
+		System.out.println( "a+b =  "+a.add( b ).toString() ); 
+		System.out.println( "a-b = "+a.minus( b ).toString() ); 
+		System.out.println( "a*b = "+a.multiply( b ).toString() ); 
+		System.out.println( "a/b =  "+a.divide( b ).toString() ); 
+	} 
+}
