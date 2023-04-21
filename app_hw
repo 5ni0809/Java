@@ -1,0 +1,47 @@
+//app_hw
+import java.util.Scanner;
+public class app_hw
+{
+       public static void main(String args[])
+
+       {
+              Scanner sc = new Scanner(System.in);
+              int x[][],n,i,j,now;
+              n = sc.nextInt(); 
+              while(n % 2 != 1)
+              {
+                     System.out.println("input again!");
+                     n = sc.nextInt();     
+              }
+              x = new int [n][n];
+              i = 0;
+              j = n/2;
+              x[i][j]=1;
+              now = 2;
+              while(now != n*n+1)
+              {
+                     if(now%n == 1){
+                          i++;
+                     }
+                     else{
+                          i--;
+                          j--;
+                          if(i<0)
+                                i=n-1;
+                          if(j<0)
+                                j=n-1;
+                     }
+                     x[i][j]=now++;
+              }
+              for(int m = 0 ;m < n; m++){
+                     for(int k = 0;k < n; k++)
+                           if(x[m][k] > 99)
+                                 System.out.print(x[m][k]+" ");
+                           else if(x[m][k]>9)
+                                 System.out.print(" "+x[m][k]+" ");
+                           else 
+                                 System.out.print("  "+x[m][k]+" ");
+                     System.out.println();
+              }
+       }
+}
