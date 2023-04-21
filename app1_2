@@ -1,4 +1,4 @@
-//App1_2,Java applet
+//app1_2,Java applet
 import java.awt.*;
 import java.applet.*;
 public class App1_2 extends Applet
