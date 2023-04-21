@@ -1,0 +1,35 @@
+//app9_2
+class CCircle   //定義類別CCircle
+{
+	private String color;
+	private double pi=3.14;
+	private double radius;
+	
+	public CCircle()                   //沒有引數的建構元
+	{
+		System.out.println("constructor CCircle() called");
+		color ="Green";
+		radius=1.0;
+	}
+	public CCircle(String str, double r)//有兩個引數的建構元
+	{
+		System.out.println("constructor CCircle(String,double) called");
+		color =str;
+		radius=r;
+	}
+	public void show()
+	{
+		System.out.println("color="+color+", Radius="+radius);
+		System.out.println("area="+pi*radius*radius);
+	}
+}
+public class app9_2
+{
+	public static void main(String args[])
+	{
+		CCircle c1=new CCircle();          //呼叫沒有引數的建構元	
+		c1.show();
+		CCircle c2=new CCircle("Blue",4.0);//呼叫有引數的建構元
+		c2.show();
+	}
+}
